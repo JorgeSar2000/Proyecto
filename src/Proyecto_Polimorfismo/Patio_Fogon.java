@@ -73,7 +73,7 @@ public class Patio_Fogon extends Patio {
     public String toString() {
         precioComida();
         total();
-        return String.format("\n\t///////////////////////////////////////////////////////////\n"
+        return ("\n\t///////////////////////////////////////////////////////////\n"
                 + "\n\tBIENVENIDO AL CENTRO DE COMIDA DE SUPERMAXI LA PRADERA\n"
                 //mensaje de bienvenida
                 + "INGRESE SU NOMBRE Y APELLIDO\n"
