@@ -108,6 +108,7 @@ public class Patio_Fogon extends Patio {
                 + "NOMBRE: " + Nombre + "\n"
                 + "APELLIDO: " + Apellido + "\n"
                 + "CEDULA: " + cedula + "\n"
+                + "MESA: "+mesa+ "\n"
                 + "COMBO: " + getPedido() + "\n"
                 + "PEDIDO(S): " + getNum() + "\n"
                 + "PRECIO COMIDA + IVA: $" + precioComida + " X " + getNum() + " + " + iva + " = $" + total + "\n"
