@@ -11,6 +11,151 @@ package Proyecto_Polimorfismo;
  */
 public class Patio_KFC extends Patio {
     //heredamos de la clase principal "Patio"
+    public static void main(String[] args) {
+        Patio_KFC File = new Patio_KFC("Juan", "Ojeda", 1, 11111111, 2, 5);
+        //CREO UN OBJETO CON REFERENCIA A LA CLASE PATIO_KFC, DONDE UBICO CADA UNO DE LOS DATOS CORRESPONDIENTES 
+        int matriz[][] = new int[5][4];//MATRIZ EN LA CUAL LLENAREMOS LOS COMBOS TOTALES         
+        try {
+            Scanner FileIn = new Scanner(new File("COMBOS.csv"));//LEEMOS LA BASE DE DATOS PREVIAMENTE LLENADA
+            Formatter FileOut = new Formatter("Prueba_Vota.csv");//CREAMOS EL NUEVO ARCHIVO
+            for (int i = 0; i < 6; i++) {
+                String contenido = FileIn.nextLine();//SIRVE PARA LEER CADA UNA DE LAS LINEAS DEL CSV
+                System.out.println(contenido);//IMPRIMIMOS EL CONTENIDO DEL CSV
+                String tokens[] = contenido.split(";");
+                if (tokens[0].equals("COMBO1")) {
+                    //EL SIGUIENTE IF SIRVE PARA COMPARAR SI LA PRIMERA CASILLA CORRESPONDE A CADA COMBO (5) EN EL CUAL PARA CADA UNO
+                    //LOS VALORES DE LA BASE DE DATOS SE RESTARAN DE ACUERDO AL NUMERO DE COMBOS QUE SE DESEA PEDIR
+                    if (File.pedido == 1) {
+                        
+                        matriz[0][0] = (Integer.parseInt(tokens[1]) < File.getNum()) ? 0 : Integer.parseInt(tokens[1]) - File.getNum();
+                    } else {
+                        matriz[0][0] = Integer.parseInt(tokens[1]);
+                    }
+                    if (File.pedido == 2) {
+                        matriz[0][1] = (Integer.parseInt(tokens[2]) < File.getNum()) ? 0 : Integer.parseInt(tokens[2]) - File.getNum();
+                    } else {
+                        matriz[0][1] = Integer.parseInt(tokens[2]);
+                    }
+                    if (File.pedido == 3) {
+                        matriz[0][2] = (Integer.parseInt(tokens[3]) < File.getNum()) ? 0 : Integer.parseInt(tokens[3]) - File.getNum();
+                    } else {
+                        matriz[0][2] = Integer.parseInt(tokens[3]);
+                    }
+                    if (File.pedido == 4) {
+                        matriz[0][3] = (Integer.parseInt(tokens[4]) < File.getNum()) ? 0 : Integer.parseInt(tokens[4]) - File.getNum();
+                    } else {
+                        matriz[0][3] = Integer.parseInt(tokens[4]);
+                    }
+
+                }
+                if (tokens[0].equals("COMBO2")) {
+                    if (File.pedido == 1) {
+//                        
+                        matriz[1][0] = (Integer.parseInt(tokens[1]) < File.getNum()) ? 0 : (Integer.parseInt(tokens[1]) - File.getNum());
+                    } else {
+                        matriz[1][0] = Integer.parseInt(tokens[1]);
+                    }
+                    if (File.pedido == 2) {
+                        matriz[1][1] = (Integer.parseInt(tokens[2]) < File.getNum()) ? 0 : (Integer.parseInt(tokens[2]) - File.getNum());
+                    } else {
+                        matriz[1][1] = Integer.parseInt(tokens[2]);
+                    }
+                    if (File.pedido == 3) {
+                        matriz[1][2] = (Integer.parseInt(tokens[3]) < File.getNum()) ? 0 : (Integer.parseInt(tokens[3]) - File.getNum());
+                    } else {
+                        matriz[1][2] = Integer.parseInt(tokens[3]);
+                    }
+                    if (File.pedido == 4) {
+                        matriz[1][3] = (Integer.parseInt(tokens[4]) < File.getNum()) ? 0 : (Integer.parseInt(tokens[4]) - File.getNum());
+                    } else {
+                        matriz[1][3] = Integer.parseInt(tokens[4]);
+                    }
+                }
+                if (tokens[0].equals("COMBO3")) {
+                    if (File.pedido == 1) {
+                        matriz[2][0] = (Integer.parseInt(tokens[1]) < File.getNum()) ? 0 : (Integer.parseInt(tokens[1]) - File.getNum());
+                    } else {
+                        matriz[2][0] = Integer.parseInt(tokens[1]);
+                    }
+                    if (File.pedido == 2) {
+                        matriz[2][1] = (Integer.parseInt(tokens[2]) < File.getNum()) ? 0 : (Integer.parseInt(tokens[2]) - File.getNum());
+                    } else {
+                        matriz[2][1] = Integer.parseInt(tokens[2]);
+                    }
+                    if (File.pedido == 3) {
+                        matriz[2][2] = (Integer.parseInt(tokens[3]) < File.getNum()) ? 0 : (Integer.parseInt(tokens[3]) - File.getNum());
+                    } else {
+                        matriz[2][2] = Integer.parseInt(tokens[3]);
+                    }
+                    if (File.pedido == 4) {
+                        matriz[2][3] = (Integer.parseInt(tokens[4]) < File.getNum()) ? 0 : (Integer.parseInt(tokens[4]) - File.getNum());
+                    } else {
+                        matriz[2][3] = Integer.parseInt(tokens[4]);
+                    }
+                }
+                if (tokens[0].equals("COMBO4")) {
+                    if (File.pedido == 1) {
+                        matriz[3][0] = (Integer.parseInt(tokens[1]) < File.getNum()) ? 0 : (Integer.parseInt(tokens[1]) - File.getNum());
+                    } else {
+                        matriz[3][0] = Integer.parseInt(tokens[1]);
+                    }
+                    if (File.pedido == 2) {
+                        matriz[3][1] = (Integer.parseInt(tokens[2]) < File.getNum()) ? 0 : (Integer.parseInt(tokens[2]) - File.getNum());
+                    } else {
+                        matriz[3][1] = Integer.parseInt(tokens[2]);
+                    }
+                    if (File.pedido == 3) {
+                        matriz[3][2] = (Integer.parseInt(tokens[3]) < File.getNum()) ? 0 : (Integer.parseInt(tokens[3]) - File.getNum());
+                    } else {
+                        matriz[3][2] = Integer.parseInt(tokens[3]);
+                    }
+                    if (File.pedido == 4) {
+                        matriz[3][3] = (Integer.parseInt(tokens[4]) < File.getNum()) ? 0 : (Integer.parseInt(tokens[4]) - File.getNum());
+                    } else {
+                        matriz[3][3] = Integer.parseInt(tokens[4]);
+                    }
+                }
+                if (tokens[0].equals("COMBO5")) {
+                    if (File.pedido == 1) {
+                        matriz[4][0] = (Integer.parseInt(tokens[1]) < File.getNum()) ? 0 : (Integer.parseInt(tokens[1]) - File.getNum());
+                    } else {
+                        matriz[4][0] = Integer.parseInt(tokens[1]);
+                    }
+                    if (File.pedido == 2) {
+                        matriz[4][1] = (Integer.parseInt(tokens[2]) < File.getNum()) ? 0 : (Integer.parseInt(tokens[2]) - File.getNum());
+                    } else {
+                        matriz[4][1] = Integer.parseInt(tokens[2]);
+                    }
+                    if (File.pedido == 3) {
+                        matriz[4][2] = (Integer.parseInt(tokens[3]) < File.getNum()) ? 0 : (Integer.parseInt(tokens[3]) - File.getNum());
+                    } else {
+                        matriz[4][2] = Integer.parseInt(tokens[3]);
+                    }
+                    if (File.pedido == 4) {
+                        matriz[4][3] = (Integer.parseInt(tokens[4]) < File.getNum()) ? 0 : (Integer.parseInt(tokens[4]) - File.getNum());
+                    } else {
+                        matriz[4][3] = Integer.parseInt(tokens[4]);
+                    }
+                }
+            }
+            FileOut.format("%s;%s;%s;%s;%s;", "COMBOS", "KFC", "FOGON", "TROPI", "ARTESANALE");
+            FileOut.format("\r\n");
+            for (int i = 0; i < matriz.length; i++) {
+                FileOut.format("%s;%d;%d;%d;%d;", "COMBO [" + (i + 1) + "]", matriz[i][0], matriz[i][1], matriz[i][2],
+                        matriz[i][3]);
+                FileOut.format("\r\n");
+            }
+            FileOut.format("\r\n\t");
+            FileOut.format("%s\r\n;%s;%s\r\n;%s;%s\r\n;%s;%d\r\n;%s;%d\r\n;%s;%d\r\n;%s;%.2f;%s;%d;%s;%.2f;%s;%.2f\r\n;%s\r\n;%s\r\n;", "FACTURA ELECTRONICA",
+                    "NOMBRE: ", File.Nombre, "APELLIDO: ",
+                    File.Apellido, "CEDULA: ", File.cedula,
+                    "NUMERO DE MESA: ", File.mesa, "COMBO: ", File.getPedido(), "PRECIO COMIDA + IVA = $", File.precioComida, "X", File.getNum(),
+                    " + ", File.iva, " = $", File.total, "GRACIAS POR VISITARNOS", "//////////////////////////////////////////////////");
+            FileOut.close();
+        } catch (Exception e) {
+        }
+    }
+
 
     public Patio_KFC(String Nombre, String Apellido, int mesa, int cedula, int pedido, int num) {
         //constructor con parametros del constructor principal
