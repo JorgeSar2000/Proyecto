@@ -1,0 +1,24 @@
+public class Busqueda {
+    public static void main(String[] args) {
+        Scanner teclado = new Scanner (System.in);
+        
+        int enteroBusqueda;//VARIABLE QUE REPRESENTA EL NUMERO A BUSCAR
+        int posicion;//VARIABLE QUE INDICA LA POSICION
+        ArregloLineal arreglobusqueda = new ArregloLineal(4);//CREAMOS UN OBJETO CON REFERENCIA A LA CLASE ARREGLOLINEAL
+//        System.out.println(arreglobusqueda);
+        System.out.print("ESCRIBA EL NUMERO DE COMBOS A PEDIR : ");
+        enteroBusqueda = teclado.nextInt();//INGRESAMOS EL DATO A BUSCAR
+        while (enteroBusqueda != -1){
+            posicion = arreglobusqueda.busquedaLineal(enteroBusqueda);//LLAMAMOS AL METODO BUSQUEDALINEAL
+            if (posicion == -1){
+                System.out.println("NUMERO DE COMBOS " +enteroBusqueda+ " INSUFICIENTE");
+                //INDICA SI EXISTE EL NUMERO DE COMBOS SUFICIENTES
+            } else {
+                System.out.println("SE ENCUENTRAN "+enteroBusqueda+ " COMBOS AUN EN LA CASILLA "+posicion);
+                //INDICA SI EXISTE LA CANTIDAD DE COMBOS PEDIDOS
+            }
+            System.out.println("ESCRIBA -1 PARA TERMINAR LA BUSQUEDA");
+            enteroBusqueda = teclado.nextInt();
+        }
+    }
+}
