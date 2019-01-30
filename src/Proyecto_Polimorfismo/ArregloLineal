@@ -1,0 +1,77 @@
+public class ArregloLineal {
+
+    Scanner teclado = new Scanner(System.in);
+
+    public int arrLineal[] = new int[5];//ARREGLO EN EL CUAL SE GUARDAN LOS COMBOS
+    private static String contenido;//VARIABLE PARA IMPRIMIR LOS DATOS DEL CSV
+    public ArregloLineal(int tamanio) {
+        //METODO PARA EL INGRESO DE DATOS
+        System.out.println("ELIJA SU PATIO DE COMIDA : \nKFC [1]\nTROPI [2]\nFOGON [3]\nARTESANALE [4]\n");
+        int op = 1;
+        op = teclado.nextInt();
+        while (op != 0) {
+            if (op == 1) {
+                System.out.println("COMBOS\t     KFC\t");
+                //AQUI PRESENTO LOS 5 COMBOS PARA KFC
+                for (int i = 0; i < arrLineal.length; i++) {
+                    arrLineal[i] = (int) (Math.random() * 100);
+                    System.out.print("COMBO [" + (i + 1) + "] :   " + arrLineal[i] + "\n");
+
+                }
+                break;
+            }
+            if (op == 2) {
+                System.out.println("COMBOS\t     TROPI\t");
+                //AQUI PRESENTO LOS 5 COMBOS PARA TROPI
+                for (int i = 0; i < arrLineal.length; i++) {
+                    arrLineal[i] = (int) (Math.random() * 100);
+                    System.out.print("COMBO [" + (i + 1) + "] :   " + arrLineal[i] + "\n");
+
+                }
+                break;
+            }
+            if (op == 3) {
+                System.out.println("COMBOS\t     FOGON\t");
+                //AQUI PRESENTO LOS 5 COMBOS PARA FOGON
+                for (int i = 0; i < arrLineal.length; i++) {
+                    arrLineal[i] = (int) (Math.random() * 100);
+                    System.out.print("COMBO [" + (i + 1) + "] :   " + arrLineal[i] + "\n");
+
+                }
+                break;
+            }
+            if (op == 4) {
+                System.out.println("COMBOS\t     ARTESANALE\t");
+                //AQUI PRESENTO LOS 5 COMBOS PARA ARTESANALE
+                for (int i = 0; i < arrLineal.length; i++) {
+                    arrLineal[i] = (int) (Math.random() * 100);
+                    System.out.print("COMBO [" + (i + 1) + "]  :  " + arrLineal[i] + "\n");
+
+                }
+                break;
+            }
+        }
+
+    }
+
+    public int busquedaLineal(int claveBusqueda) {
+        //METODO PARA LA BUSQUEDA DEL ELEMENTO DESEADO
+        for (int i = 0; i < arrLineal.length; i++) {
+            if (arrLineal[i] == claveBusqueda) {
+                return i;
+            }
+
+        }
+        return -1;
+    }
+
+    public String toString() {
+        StringBuilder temporal = new StringBuilder();
+        //UTILIZAMOS STRINGBUILDER YA QUE SU CAPACIDAD Y CONTENIDO PUEDE CAMBIAR
+        for (int elemento : arrLineal) {
+            temporal.append(elemento + " ");//CONCATENAMOS CADENAS
+        }
+        temporal.append("\n");
+        return temporal.toString();
+    }
+}
